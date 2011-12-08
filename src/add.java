@@ -2,6 +2,10 @@ import java.util.Random;
 
 public class add extends agw // extends yy
 {
+	/**
+	 * Sequence of heights:
+	 * 2  3  5  8  10 11 9  3
+	 */
 	protected add(int paramInt, p/*Material*/ paramp)
 	{
 		super(paramInt, paramp);
@@ -30,20 +34,23 @@ public class add extends agw // extends yy
 		world.t = false;
 	}
 
-	public void a(ry world, int paramInt1, int paramInt2, int paramInt3, Random paramRandom)
+	public void a(ry world, int posx, int paramInt2, int paramInt3, Random paramRandom)
 	{ // updateTick
 		if (this.bZ == p.h)
 		{ // if lava
 			int i = paramRandom.nextInt(3);
 			for (int j = 0; j < i; j++)
 			{
-				paramInt1 += paramRandom.nextInt(3) - 1;
+				posx += paramRandom.nextInt(3) - 1;
 				paramInt2++;
 				paramInt3 += paramRandom.nextInt(3) - 1;
-				int k = world.a(paramInt1, paramInt2, paramInt3);
+				int k = world.a(posx, paramInt2, paramInt3);
 				if (k == 0)
 				{
-					if ((!k(world, paramInt1 - 1, paramInt2, paramInt3)) && (!k(world, paramInt1 + 1, paramInt2, paramInt3)) && (!k(world, paramInt1, paramInt2, paramInt3 - 1)) && (!k(world, paramInt1, paramInt2, paramInt3 + 1)) && (!k(world, paramInt1, paramInt2 - 1, paramInt3)) && (!k(world, paramInt1, paramInt2 + 1, paramInt3)))
+					if ((!k(world, posx - 1, paramInt2, paramInt3)) && (!k(world, posx + 1, paramInt2, paramInt3)) &&
+					    (!k(world, posx, paramInt2, paramInt3 - 1)) && (!k(world, posx, paramInt2, paramInt3 + 1)) &&
+					    (!k(world, posx, paramInt2 - 1, paramInt3)) && (!k(world, posx, paramInt2 + 1, paramInt3))
+					   )
 							continue;
 					world.g(paramInt1, paramInt2, paramInt3, yy.ar.bM);
 					return;
@@ -51,6 +58,11 @@ public class add extends agw // extends yy
 				if (yy.k[k].bZ.d())
 					return;
 			}
+		}
+		else
+		{
+			//setBlockBounds(0f,0f,0f,0f,mod_oceanwaves.getheight(world, posx, paramInt2, paramInt3, paramRandom), 0f);
+			//scheduleUpdate();
 		}
 	}
 
