@@ -6,12 +6,13 @@ public class add extends agw // extends yy
 	 * Sequence of heights:
 	 * 2  3  5  8  10 11 9  3
 	 */
+	private p matInstance = new p(aav.b); //to avoid javac thinking it's class var 
 	protected add(int paramInt, p/*Material*/ paramp)
 	{
 		super(paramInt, paramp);
 
 		b(false);//setTickOnLoad
-		if (paramp == p.h)
+		if (paramp == matInstance.h)
 		{ // if lava
 			b(true);//setTickOnLoad
 		}
@@ -36,7 +37,7 @@ public class add extends agw // extends yy
 
 	public void a(ry world, int posx, int paramInt2, int paramInt3, Random paramRandom)
 	{ // updateTick
-		if (this.bZ == p.h)
+		if (this.bZ == matInstance.h)
 		{ // if lava
 			int i = paramRandom.nextInt(3);
 			for (int j = 0; j < i; j++)
@@ -52,7 +53,7 @@ public class add extends agw // extends yy
 					    (!k(world, posx, paramInt2 - 1, paramInt3)) && (!k(world, posx, paramInt2 + 1, paramInt3))
 					   )
 							continue;
-					world.g(paramInt1, paramInt2, paramInt3, yy.ar.bM);
+					world.g(posx, paramInt2, paramInt3, yy.ar.bM);
 					return;
 				}
 				if (yy.k[k].bZ.d())

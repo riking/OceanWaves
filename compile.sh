@@ -5,5 +5,5 @@ for j in $JARS
 	CLASSPATH=$CLASSPATH$j":"
 	done
 CLASSPATH=${CLASSPATH%?}
-javac -cp $CLASSPATH -d out/ src/*.java
+javac -cp $CLASSPATH -d out/ -Xmaxerrs 5 src/*.java
 

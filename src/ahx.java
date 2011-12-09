@@ -6,6 +6,8 @@ public class ahx extends agw
 
 	boolean[] cb = new boolean[4];
 	int[] cc = new int[4];
+	private p matInstance = new p(aav.b);
+		//for compiler confusion
 
 	protected ahx(int paramInt, p paramp)
 	{
@@ -26,7 +28,7 @@ public class ahx extends agw
 		int i = g(paramry, paramInt1, paramInt2, paramInt3);
 
 		int j = 1;
-		if ((this.bZ == p.h) && (!paramry.y.d))
+		if ((this.bZ == matInstance.h) && (!paramry.y.d))
 		{
 			j = 2;
 		}
@@ -58,7 +60,7 @@ public class ahx extends agw
 					n = i1 + 8;
 				}
 			}
-			if ((this.a >= 2) && (this.bZ == p.g))
+			if ((this.a >= 2) && (this.bZ == matInstance.g))
 			{
 				if (paramry.e(paramInt1, paramInt2 - 1, paramInt3).b())
 				{
@@ -69,7 +71,7 @@ public class ahx extends agw
 					n = 0;
 				}
 			}
-			if ((this.bZ == p.h) && 
+			if ((this.bZ == matInstance.h) && 
 			 (i < 8) && (n < 8) && (n > i) && 
 			 (paramRandom.nextInt(4) != 0))
 			{
@@ -101,8 +103,8 @@ public class ahx extends agw
 		}
 		if (m(paramry, paramInt1, paramInt2 - 1, paramInt3))
 		{
-			if ((this.bZ == p.h) && 
-			 (paramry.e(paramInt1, paramInt2 - 1, paramInt3) == p.g))
+			if ((this.bZ == matInstance.h) && 
+			 (paramry.e(paramInt1, paramInt2 - 1, paramInt3) == matInstance.g))
 			{
 				paramry.g(paramInt1, paramInt2 - 1, paramInt3, yy.t.bM);
 				h(paramry, paramInt1, paramInt2 - 1, paramInt3);
@@ -127,10 +129,10 @@ public class ahx extends agw
 				n = 1;
 			}
 			if (n >= 8) return;
-			if (arrayOfBoolean[0] != 0) g(paramry, paramInt1 - 1, paramInt2, paramInt3, n);
-			if (arrayOfBoolean[1] != 0) g(paramry, paramInt1 + 1, paramInt2, paramInt3, n);
-			if (arrayOfBoolean[2] != 0) g(paramry, paramInt1, paramInt2, paramInt3 - 1, n);
-			if (arrayOfBoolean[3] != 0) g(paramry, paramInt1, paramInt2, paramInt3 + 1, n);
+			if (arrayOfBoolean[0]) g(paramry, paramInt1 - 1, paramInt2, paramInt3, n);
+			if (arrayOfBoolean[1]) g(paramry, paramInt1 + 1, paramInt2, paramInt3, n);
+			if (arrayOfBoolean[2]) g(paramry, paramInt1, paramInt2, paramInt3 - 1, n);
+			if (arrayOfBoolean[3]) g(paramry, paramInt1, paramInt2, paramInt3 + 1, n);
 		}
 	}
 
@@ -141,7 +143,7 @@ public class ahx extends agw
 			int i = paramry.a(paramInt1, paramInt2, paramInt3);
 			if (i > 0)
 			{
-				if (this.bZ == p.h)
+				if (this.bZ == matInstance.h)
 				{
 					h(paramry, paramInt1, paramInt2, paramInt3);
 				} else {
@@ -195,11 +197,12 @@ public class ahx extends agw
 
 	private boolean[] k(ry paramry, int paramInt1, int paramInt2, int paramInt3)
 	{
-		for (int i = 0; i < 4; i++) {
+		int i,j,k,m;
+		for (i = 0; i < 4; i++) {
 			this.cc[i] = 1000;
 			j = paramInt1;
-			int k = paramInt2;
-			int m = paramInt3;
+			k = paramInt2;
+			m = paramInt3;
 
 			if (i == 0) j--;
 			if (i == 1) j++;
@@ -221,7 +224,7 @@ public class ahx extends agw
 		}
 
 		i = this.cc[0];
-		for (int j = 1; j < 4; j++)
+		for (j = 1; j < 4; j++)
 		{
 			if (this.cc[j] >= i) continue;
 			i = this.cc[j];
@@ -229,7 +232,7 @@ public class ahx extends agw
 
 		for (j = 0; j < 4; j++)
 		{
-			this.cb[j] = (this.cc[j] == i ? 1 : false);
+			this.cb[j] = (this.cc[j] == i ? true : false);
 		}
 		return this.cb;
 	}
@@ -243,7 +246,7 @@ public class ahx extends agw
 		}
 		if (i == 0) return false;
 		p localp = yy.k[i].bZ;
-		if (localp == p.A) return true;
+		if (localp == matInstance.A) return true;
 		return localp.d();
 	}
 
@@ -260,7 +263,7 @@ public class ahx extends agw
 	{
 		p localp = paramry.e(paramInt1, paramInt2, paramInt3);
 		if (localp == this.bZ) return false;
-		if (localp == p.h) return false;
+		if (localp == matInstance.h) return false;
 		return !l(paramry, paramInt1, paramInt2, paramInt3);
 	}
 
