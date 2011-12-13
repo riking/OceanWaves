@@ -15,11 +15,11 @@ public class BlockStationary extends BlockFluid {
    protected BlockStationary(int var1, Material var2) {
       super(var1, var2);
       this.matInstance = new Material(MapColor.airColor);
-      this.setTickOnLoad(false);
-      Material var10001 = this.matInstance;
-      if(var2 == Material.lava) {
-         this.setTickOnLoad(true);
-      }
+      this.setTickOnLoad(true);
+      //Material var10001 = this.matInstance;
+      //if(var2 == Material.lava) {
+      //   this.setTickOnLoad(true);
+      //}
 
    }
 

@@ -11,11 +11,11 @@ public class add extends agw // extends yy
 	{
 		super(paramInt, paramp);
 
-		b(false);//setTickOnLoad
-		if (paramp == matInstance.h)
-		{ // if lava
-			b(true);//setTickOnLoad
-		}
+		b(true);//setTickOnLoad
+		//if (paramp == matInstance.h)
+		//{ // if lava
+		//	b(true);//setTickOnLoad
+		//}
 	}
 
 	public void a(ry world, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
