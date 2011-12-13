@@ -6,7 +6,7 @@ import net.minecraft.src.World;
 
 public class mod_oceanwaves extends BaseMod {
 
-	private float[] heights = new float[]{0.2F, 0.3F, 0.5F, 0.8F, 1.0F, 1.1F, 0.9F, 0.3F};
+	private static float[] heights = new float[]{0.2F, 0.3F, 0.5F, 0.8F, 1.0F, 1.1F, 0.9F, 0.3F};
 
 
 	public String getVersion() {

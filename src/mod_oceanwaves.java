@@ -11,7 +11,7 @@ public class mod_oceanwaves extends BaseMod {
 
 	public String getVersion() { return "Minecraft 1.0.0 mod v0.2"; }
 
-	private float[] heights = {0.2f,0.3f,0.5f,0.8f,1.0f,1.1f,0.9f,0.3f};
+	private static float[] heights = {0.2f,0.3f,0.5f,0.8f,1.0f,1.1f,0.9f,0.3f};
 
 	public void load() {
 		// this is the BaseMod method to put all your shit in, like how mod_whatever() used to be.
