@@ -17,7 +17,7 @@ public class mod_oceanwaves extends BaseMod {
 		// this is the BaseMod method to put all your shit in, like how mod_whatever() used to be.
 	}
 
-	public float getHeight(ry world, int posx, int posy, int posz, Random rand)
+	public static float getHeight(ry world, int posx, int posy, int posz, Random rand)
 	{
 		int tempid = world.a(posx,posy+1,posz);
 		if(tempid == yy.A.bM || tempid == yy.B.bM)

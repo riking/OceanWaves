@@ -15,7 +15,7 @@ public class mod_oceanwaves extends BaseMod {
 
 	public void load() {}
 
-	public float getHeight(World world, int posx, int posy, int posz, Random var5) 
+	public static float getHeight(World world, int posx, int posy, int posz, Random var5) 
 	{
 		int tempid = world.getBlockId(posx,posy+1,posz);
 		if(tempid == Block.waterMoving.blockID || tempid == Block.waterStill.blockID)
