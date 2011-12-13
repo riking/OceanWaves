@@ -3,6 +3,7 @@ import java.util.Random;
 /* Classes used:
 
 ry - World
+yy - Block
 
 */
 
@@ -15,8 +16,11 @@ public class mod_oceanwaves extends BaseMod {
 	}
 
 	public float getHeight(ry world, int posx, int posy, int posz, Random rand) {
-		int tempid = world.a(posx,posy,posz);
-				
+		int tempid = world.a(posx,posy+1,posz);
+		if(tempid == yy.A.bM || tempid == yy.B.bM)
+		{
+			return 1f; //don't want water in the middle of ponds changing
+		}
 		return heights[((int)(world.u() % 8)+posx) % 8];
 	}
 }

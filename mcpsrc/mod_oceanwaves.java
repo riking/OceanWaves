@@ -18,6 +18,10 @@ public class mod_oceanwaves extends BaseMod {
 	public float getHeight(World world, int posx, int posy, int posz, Random var5) 
 	{
 		int tempid = world.getBlockId(posx,posy+1,posz);
+		if(tempid == Block.waterMoving.blockID || tempid == Block.waterStill.blockID)
+		{
+			return 1f; //don't want water in the middle of ponds changing
+		}
 		return this.heights[((int)(world.getWorldTime() % 8L) + posx) % 8];
 	}
 }
