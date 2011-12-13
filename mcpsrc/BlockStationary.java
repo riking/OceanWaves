@@ -23,6 +23,16 @@ public class BlockStationary extends BlockFluid {
 
 	}
 
+
+//set to render like a door
+   public boolean renderAsNormalBlock() {
+      return false;
+   }
+   public int getRenderType() {
+      return 7;
+   }
+
+
 	public void onNeighborBlockChange(World world, int var2, int var3, int var4, int var5) {
 		super.onNeighborBlockChange(world, var2, var3, var4, var5);
 		if(world.getBlockId(var2, var3, var4) == this.blockID) {

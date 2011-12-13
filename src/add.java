@@ -24,6 +24,16 @@ public class add extends agw // extends yy
 		//}
 	}
 
+
+//set to render like a door
+   public boolean b() {
+      return false;
+   }
+   public int c() {
+      return 7;
+   }
+
+
 	public void a(ry world, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
 	{ // onNeighborBlockChange
 		super.a(world, paramInt1, paramInt2, paramInt3, paramInt4);
