@@ -1,16 +1,22 @@
 import java.util.Random;
 
+/* Classes Used:
+
+yy - Block
+add - BlockStationary
+agw - BlockFluid
+p - Material
+aav - MapColor
+
+*/
+
 public class add extends agw // extends yy
 {
-	/**
-	 * Sequence of heights:
-	 * 2  3  5  8  10 11 9  3
-	 */
-	private p matInstance = new p(aav.b); //to avoid javac thinking it's class var 
+	private p matinstance; 
 	protected add(int paramInt, p/*Material*/ paramp)
 	{
 		super(paramInt, paramp);
-
+		matInstance = new p(aav.b); 
 		b(true);//setTickOnLoad
 		//if (paramp == matInstance.h)
 		//{ // if lava
@@ -26,7 +32,7 @@ public class add extends agw // extends yy
 	}
 
 	private void j(ry world, int paramInt1, int paramInt2, int paramInt3)
-	{ // checkForHarden (?)
+	{ // makeFlowing
 		int i = world.d(paramInt1, paramInt2, paramInt3);
 		world.t = true;
 		world.b(paramInt1, paramInt2, paramInt3, this.bM - 1 /*block id - 1*/, i);
@@ -62,7 +68,7 @@ public class add extends agw // extends yy
 		}
 		else
 		{
-			//setBlockBounds(0f,0f,0f,0f,mod_oceanwaves.getheight(world, posx, paramInt2, paramInt3, paramRandom), 0f);
+			a(0f,0f,0f,0f,mod_oceanwaves.getheight(world, posx, paramInt2, paramInt3, paramRandom), 0f);
 			//scheduleUpdate();
 		}
 	}
