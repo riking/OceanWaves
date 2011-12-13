@@ -10,7 +10,7 @@ public class mod_oceanwaves extends BaseMod {
 
 
 	public String getVersion() {
-		return "Minecraft 1.0.0 mod v0";
+		return "Minecraft 1.0.0 mod v0.2";
 	}
 
 	public void load() {}

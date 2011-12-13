@@ -12,7 +12,7 @@ aav - MapColor
 
 public class add extends agw // extends yy
 {
-	private p matinstance; 
+	private p matInstance; 
 	protected add(int paramInt, p/*Material*/ paramp)
 	{
 		super(paramInt, paramp);
@@ -68,7 +68,7 @@ public class add extends agw // extends yy
 		}
 		else
 		{
-			a(0f,0f,0f,0f,mod_oceanwaves.getheight(world, posx, paramInt2, paramInt3, paramRandom), 0f);
+			a(0f,0f,0f,0f,mod_oceanwaves.getHeight(world, posx, paramInt2, paramInt3, paramRandom), 0f);
 			//scheduleUpdate();
 		}
 	}
