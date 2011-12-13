@@ -10,7 +10,7 @@ yy - Block
 
 public class mod_oceanwaves extends BaseMod {
 
-	public String getVersion() { return "Minecraft 1.0.0 mod v0.2"; }
+	public String getVersion() { return "Minecraft 1.0.0 mod v0.3"; }
 
 	private static float[] heights = {0.2f,0.3f,0.5f,0.8f,1.0f,1.1f,0.9f,0.3f};
 
