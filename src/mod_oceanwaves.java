@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.lang.Math;
 
 /* Classes used:
 
@@ -24,6 +25,6 @@ public class mod_oceanwaves extends BaseMod {
 		{
 			return 1f; //don't want water in the middle of ponds changing
 		}
-		return heights[((int)(world.u() % 8)+posx) % 8];
+		return heights[Math.abs(((int)(world.u() % 8)+posx) % 8)];
 	}
 }

@@ -1,6 +1,7 @@
 package net.minecraft.src;
 
 import java.util.Random;
+import java.lang.Math;
 import net.minecraft.src.BaseMod;
 import net.minecraft.src.World;
 
@@ -22,6 +23,6 @@ public class mod_oceanwaves extends BaseMod {
 		{
 			return 1f; //don't want water in the middle of ponds changing
 		}
-		return this.heights[((int)(world.getWorldTime() % 8L) + posx) % 8];
+		return this.heights[Math.abs(((int)(world.getWorldTime() % 8L) + posx) % 8)];
 	}
 }
